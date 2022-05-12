@@ -1,0 +1,36 @@
+<link
+  rel="stylesheet"
+  href="http://unpkg.com/@progress/kendo-theme-default/dist/all.css"
+/>
+<span class="material-icons global-search-icon" *ngIf="!isNewEmployeeOpened">
+  <kendo-dialog>
+    <kendo-dialog-titlebar> Add New Employee </kendo-dialog-titlebar>
+    <kendo-multicolumncombobox
+      [data]="employees"
+      textField="name"
+      valueField="id"
+      placeholder="Search Employee"
+    >
+      <kendo-combobox-column>
+        <ng-template kendoMultiColumnComboBoxColumnCellTemplate let-dataItem>
+          <span class="pr-1">Name : {{ dataItem.name }}</span
+          >&nbsp; <span class="pr-1 text-muted">ID : {{ dataItem.id }}</span
+          >&nbsp;
+          <span class="pr-1 text-muted">DOB : {{ dataItem.dob }}</span>
+        </ng-template>
+      </kendo-combobox-column>
+      <ng-template kendoComboBoxFooterTemplate>
+        <button kendoButton (click)="openNewEmployee()">
+          ADD NEW EMPLOYEE
+        </button>
+      </ng-template>
+    </kendo-multicolumncombobox>
+    <p>
+      Search to see if the employee is already in the system. If they aren’t in
+      the system, manually add new employee.
+    </p>
+  </kendo-dialog>
+</span>
+<div *ngIf="isNewEmployeeOpened">
+  <cms-employee-details></cms-employee-details>
+</div>

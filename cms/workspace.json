@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "dashboard": "libs/dashboard",
+    "employee": "libs/employee",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e"
+  }
+}

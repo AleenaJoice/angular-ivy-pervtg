@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/employee",
+  "sourceRoot": "libs/employee/src",
+  "prefix": "cms",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/employee"],
+      "options": {
+        "jestConfig": "libs/employee/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/employee/src/**/*.ts",
+          "libs/employee/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
